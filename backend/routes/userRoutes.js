@@ -13,10 +13,7 @@ import {
 } from '../controllers/userController.js';
 import { protect, admin } from '../middleware/authMiddleware.js';
 
-router
-  .route('/')
-  .get(protect, admin, getUsers)
-  .post(protect, admin, registerUser);
+router.route('/').get(protect, admin, getUsers).post(registerUser);
 router.post('/logout', logoutUser);
 router.post('/auth', authUser);
 router
